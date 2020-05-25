@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="videocall_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIx-g0-r4p">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-iv-o7c" customClass="EffectPlayerView" customModule="BanubaSdk">
+                                <rect key="frame" x="269" y="49" width="140" height="186.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="XPG-og-dO1"/>
+                                    <constraint firstAttribute="width" secondItem="aSy-iv-o7c" secondAttribute="height" multiplier="3:4" id="zz1-GP-rCM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LIx-g0-r4p" secondAttribute="bottom" id="885-FD-8in"/>
+                            <constraint firstItem="aSy-iv-o7c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="AJu-CA-PHc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aSy-iv-o7c" secondAttribute="trailing" constant="5" id="CeE-Cz-QhY"/>
+                            <constraint firstItem="LIx-g0-r4p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bvL-Fw-HUw"/>
+                            <constraint firstItem="LIx-g0-r4p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ieF-6Z-okV"/>
+                            <constraint firstItem="LIx-g0-r4p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="sQG-ke-eyJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="localVideo" destination="aSy-iv-o7c" id="744-G9-r5w"/>
+                        <outlet property="remoteVideo" destination="LIx-g0-r4p" id="ks2-r3-wGG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>

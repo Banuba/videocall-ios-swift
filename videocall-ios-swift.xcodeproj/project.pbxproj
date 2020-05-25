@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		137EE7E02476851D0037E8B3 /* BanubaEffectPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EE7DE247685100037E8B3 /* BanubaEffectPlayer.framework */; };
+		137EE7E12476851D0037E8B3 /* BanubaEffectPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 137EE7DE247685100037E8B3 /* BanubaEffectPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13C2AF6224766AD0009641FC /* effects in Resources */ = {isa = PBXBuildFile; fileRef = 13C2AF6124766AD0009641FC /* effects */; };
+		703585872472DEB400FF0789 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703585862472DEB400FF0789 /* TokenService.swift */; };
+		70A262C72472B2670036B942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262C62472B2670036B942 /* AppDelegate.swift */; };
+		70A262CB2472B2670036B942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262CA2472B2670036B942 /* ViewController.swift */; };
+		70A262CE2472B2670036B942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A262CC2472B2670036B942 /* Main.storyboard */; };
+		BAA44F372477C0A300B3EB14 /* BanubaSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA44F362477C09900B3EB14 /* BanubaSdk.framework */; };
+		BAA44F382477C0A300B3EB14 /* BanubaSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAA44F362477C09900B3EB14 /* BanubaSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F80C47E672C078322821BF2C /* Pods_videocall_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAA44F352477C09900B3EB14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAA44F312477C09900B3EB14 /* BanubaSdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57AB757820FF4A240013C11F;
+			remoteInfo = BanubaSdk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		703585922472E0FF00FF0789 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BAA44F382477C0A300B3EB14 /* BanubaSdk.framework in Embed Frameworks */,
+				137EE7E12476851D0037E8B3 /* BanubaEffectPlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		137EE7DE247685100037E8B3 /* BanubaEffectPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BanubaEffectPlayer.framework; path = Frameworks/BanubaEffectPlayer.framework; sourceTree = "<group>"; };
+		13C2AF6124766AD0009641FC /* effects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effects; sourceTree = "<group>"; };
+		64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videocall_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		703585862472DEB400FF0789 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		703AA2F62473BCCD002272D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		70A262C32472B2670036B942 /* videocall-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "videocall-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A262C62472B2670036B942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70A262CA2472B2670036B942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70A262CD2472B2670036B942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70A262D42472B26B0036B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70A262DA2472B7680036B942 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videocall-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		BAA44F312477C09900B3EB14 /* BanubaSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BanubaSdk.xcodeproj; path = Frameworks/BanubaSdk.xcodeproj; sourceTree = "<group>"; };
+		FD9BD8C7C1B2D2BDB5F84589 /* Pods-videocall-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videocall-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70A262C02472B2670036B942 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137EE7E02476851D0037E8B3 /* BanubaEffectPlayer.framework in Frameworks */,
+				F80C47E672C078322821BF2C /* Pods_videocall_ios_swift.framework in Frameworks */,
+				BAA44F372477C0A300B3EB14 /* BanubaSdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41FD301D749EE53C618ADA71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD9BD8C7C1B2D2BDB5F84589 /* Pods-videocall-ios-swift.debug.xcconfig */,
+				98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70A262BA2472B2670036B942 = {
+			isa = PBXGroup;
+			children = (
+				703AA2F62473BCCD002272D7 /* README.md */,
+				70A262DA2472B7680036B942 /* Podfile */,
+				70A262C52472B2670036B942 /* videocall-ios-swift */,
+				13C2AF6124766AD0009641FC /* effects */,
+				70A262C42472B2670036B942 /* Products */,
+				41FD301D749EE53C618ADA71 /* Pods */,
+				A54391BAE8727CEC05A68108 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70A262C42472B2670036B942 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70A262C32472B2670036B942 /* videocall-ios-swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70A262C52472B2670036B942 /* videocall-ios-swift */ = {
+			isa = PBXGroup;
+			children = (
+				70A262C62472B2670036B942 /* AppDelegate.swift */,
+				70A262CA2472B2670036B942 /* ViewController.swift */,
+				703585862472DEB400FF0789 /* TokenService.swift */,
+				70A262CC2472B2670036B942 /* Main.storyboard */,
+				70A262D42472B26B0036B942 /* Info.plist */,
+			);
+			path = "videocall-ios-swift";
+			sourceTree = "<group>";
+		};
+		A54391BAE8727CEC05A68108 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAA44F312477C09900B3EB14 /* BanubaSdk.xcodeproj */,
+				137EE7DE247685100037E8B3 /* BanubaEffectPlayer.framework */,
+				64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAA44F322477C09900B3EB14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAA44F362477C09900B3EB14 /* BanubaSdk.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70A262C22472B2670036B942 /* videocall-ios-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A262D72472B26B0036B942 /* Build configuration list for PBXNativeTarget "videocall-ios-swift" */;
+			buildPhases = (
+				E6EF16BD4FC255A6E821BA8A /* [CP] Check Pods Manifest.lock */,
+				70A262BF2472B2670036B942 /* Sources */,
+				70A262C02472B2670036B942 /* Frameworks */,
+				70A262C12472B2670036B942 /* Resources */,
+				703585922472E0FF00FF0789 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "videocall-ios-swift";
+			productName = "videocall-ios-swift";
+			productReference = 70A262C32472B2670036B942 /* videocall-ios-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70A262BB2472B2670036B942 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Banuba;
+				TargetAttributes = {
+					70A262C22472B2670036B942 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 70A262BE2472B2670036B942 /* Build configuration list for PBXProject "videocall-ios-swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70A262BA2472B2670036B942;
+			productRefGroup = 70A262C42472B2670036B942 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BAA44F322477C09900B3EB14 /* Products */;
+					ProjectRef = BAA44F312477C09900B3EB14 /* BanubaSdk.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				70A262C22472B2670036B942 /* videocall-ios-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BAA44F362477C09900B3EB14 /* BanubaSdk.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BanubaSdk.framework;
+			remoteRef = BAA44F352477C09900B3EB14 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70A262C12472B2670036B942 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A262CE2472B2670036B942 /* Main.storyboard in Resources */,
+				13C2AF6224766AD0009641FC /* effects in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E6EF16BD4FC255A6E821BA8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-videocall-ios-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70A262BF2472B2670036B942 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				703585872472DEB400FF0789 /* TokenService.swift in Sources */,
+				70A262CB2472B2670036B942 /* ViewController.swift in Sources */,
+				70A262C72472B2670036B942 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70A262CC2472B2670036B942 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70A262CD2472B2670036B942 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70A262D52472B26B0036B942 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70A262D62472B26B0036B942 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70A262D82472B26B0036B942 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD9BD8C7C1B2D2BDB5F84589 /* Pods-videocall-ios-swift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "videocall-ios-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.banuba.sdk.examples.videocall-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Debug;
+		};
+		70A262D92472B26B0036B942 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "videocall-ios-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.banuba.sdk.examples.videocall-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70A262BE2472B2670036B942 /* Build configuration list for PBXProject "videocall-ios-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A262D52472B26B0036B942 /* Debug */,
+				70A262D62472B26B0036B942 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A262D72472B26B0036B942 /* Build configuration list for PBXNativeTarget "videocall-ios-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A262D82472B26B0036B942 /* Debug */,
+				70A262D92472B26B0036B942 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70A262BB2472B2670036B942 /* Project object */;
+}
