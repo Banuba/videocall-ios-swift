@@ -1,4 +1,4 @@
-The example shows how to get started using Banuba [Face AR SDK](https://www.banuba.com/facear-sdk/face-filters) and [Agora.io](https://www.agora.io/en/) SDK to enhance video calls with real-time face filters, virtual backgrounds or 3D avatars.
+The example shows how to get started using Banuba [Face AR SDK](https://www.banuba.com/facear-sdk/face-filters) and [Agora.io](https://www.agora.io/en/) SDK to enhance video calls with real-time face filters and virtual backgrounds.
 
 # Getting Started
 
