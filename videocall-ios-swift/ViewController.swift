@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         setupLocalVideo()
         joinChannel()
         localVideo.layoutIfNeeded()
-        sdkManager.setup(configuration: EffectPlayerConfinguration(renderMode: .video))
+        sdkManager.setup(configuration: EffectPlayerConfiguration(renderMode: .video))
         localVideo?.effectPlayer = sdkManager.effectPlayer
         sdkManager.setRenderTarget(layer: localVideo?.layer as! CAEAGLLayer, playerConfiguration: nil)
         sdkManager.output?.startForwardingFrames(handler: { (pixelBuffer) -> Void in
