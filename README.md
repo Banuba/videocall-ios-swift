@@ -3,8 +3,8 @@ The example shows how to get started using Banuba [Face AR SDK](https://www.banu
 # Getting Started
 
 1. Get the latest Banuba SDK archive for iOS and the client token. Please fill in our [form on banuba.com](https://www.banuba.com/face-filters-sdk) website, or contact us via [info@banuba.com](mailto:info@banuba.com).
-2. Copy `BanubaEffectPlayer.framework` and `BanubaSdk` project folder from the Banuba SDK archive into `Frameworks` dir:
-    `BNBEffectPlayer/bin/BanubaEffectPlayer.framework` => `videocall-ios-swift/Frameworks/`
+2. Copy `BanubaEffectPlayer.xcframework` and `BanubaSdk` project folder from the Banuba SDK archive into `Frameworks` dir:
+    `BNBEffectPlayer/bin/BanubaEffectPlayer.xcframework` => `videocall-ios-swift/Frameworks/`
     `BNBEffectPlayer/src/BanubaSdk/BanubaSdk/BanubaSdk` => `videocall-ios-swift/Frameworks/`
     `BNBEffectPlayer/src/BanubaSdk/BanubaSdk/BanubaSdk.xcodeproj` => `videocall-ios-swift/Frameworks/`
 3. Run `pod install` for this project in order to install AgoraRtcEngine_iOS

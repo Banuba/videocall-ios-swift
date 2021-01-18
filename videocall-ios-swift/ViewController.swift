@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         sdkManager.effectPlayer?.setEffectVolume(0)
         sdkManager.input.startCamera()
-        sdkManager.loadEffect("UnluckyWitch")
+        _ = sdkManager.loadEffect("UnluckyWitch")
         sdkManager.startEffectPlayer()
     }
     
