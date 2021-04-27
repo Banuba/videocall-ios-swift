@@ -18,8 +18,7 @@ class ViewController: UIViewController {
         joinChannel()
         localVideo.layoutIfNeeded()
         sdkManager.setup(configuration: EffectPlayerConfiguration(renderMode: .video))
-        localVideo?.effectPlayer = sdkManager.effectPlayer
-        sdkManager.setRenderTarget(layer: localVideo?.layer as! CAEAGLLayer, playerConfiguration: nil)
+        sdkManager.setRenderTarget(view: localVideo, playerConfiguration: nil)
         sdkManager.output?.startForwardingFrames(handler: { (pixelBuffer) -> Void in
             self.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer)
         })
