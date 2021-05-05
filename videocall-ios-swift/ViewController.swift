@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         videoFrame.format = 12
         videoFrame.time = CMTimeMakeWithSeconds(NSDate().timeIntervalSince1970, preferredTimescale: 1000)
         videoFrame.textureBuf = pixelBuffer
-        videoFrame.rotation = 180
         agoraKit.pushExternalVideoFrame(videoFrame)
     }
     
