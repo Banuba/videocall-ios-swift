@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1343724C26383F9C00553CAD /* BanubaSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1343724826383F4E00553CAD /* BanubaSdk.framework */; };
-		1343724D26383F9C00553CAD /* BanubaSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1343724826383F4E00553CAD /* BanubaSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13C2AF6224766AD0009641FC /* effects in Resources */ = {isa = PBXBuildFile; fileRef = 13C2AF6124766AD0009641FC /* effects */; };
 		7017ED9425EE6D2500CC9B33 /* BanubaEffectPlayer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13522BE525B5C2AE00617023 /* BanubaEffectPlayer.xcframework */; };
 		7017ED9525EE6D2500CC9B33 /* BanubaEffectPlayer.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13522BE525B5C2AE00617023 /* BanubaEffectPlayer.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -16,13 +14,15 @@
 		70A262C72472B2670036B942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262C62472B2670036B942 /* AppDelegate.swift */; };
 		70A262CB2472B2670036B942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262CA2472B2670036B942 /* ViewController.swift */; };
 		70A262CE2472B2670036B942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A262CC2472B2670036B942 /* Main.storyboard */; };
+		BAC5BBDA2702027D007D4B62 /* BanubaSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC5BBD927020269007D4B62 /* BanubaSdk.framework */; };
+		BAC5BBDB2702027D007D4B62 /* BanubaSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC5BBD927020269007D4B62 /* BanubaSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F80C47E672C078322821BF2C /* Pods_videocall_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1343724726383F4E00553CAD /* PBXContainerItemProxy */ = {
+		BAC5BBD827020269007D4B62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1343724326383F4E00553CAD /* BanubaSdk.xcodeproj */;
+			containerPortal = BAC5BBD427020269007D4B62 /* BanubaSdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 57AB757820FF4A240013C11F;
 			remoteInfo = BanubaSdk;
@@ -36,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1343724D26383F9C00553CAD /* BanubaSdk.framework in Embed Frameworks */,
+				BAC5BBDB2702027D007D4B62 /* BanubaSdk.framework in Embed Frameworks */,
 				7017ED9525EE6D2500CC9B33 /* BanubaEffectPlayer.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -45,7 +45,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1343724326383F4E00553CAD /* BanubaSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BanubaSdk.xcodeproj; path = "../quickstart-ios-swift/Frameworks/BanubaSdk/BanubaSdk/BanubaSdk.xcodeproj"; sourceTree = "<group>"; };
 		13522BE525B5C2AE00617023 /* BanubaEffectPlayer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BanubaEffectPlayer.xcframework; path = Frameworks/BanubaEffectPlayer.xcframework; sourceTree = "<group>"; };
 		13C2AF6124766AD0009641FC /* effects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effects; sourceTree = "<group>"; };
 		64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videocall_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +57,7 @@
 		70A262D42472B26B0036B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A262DA2472B7680036B942 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videocall-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		BAC5BBD427020269007D4B62 /* BanubaSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BanubaSdk.xcodeproj; path = Frameworks/BanubaSdk.xcodeproj; sourceTree = "<group>"; };
 		FD9BD8C7C1B2D2BDB5F84589 /* Pods-videocall-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videocall-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,21 +68,13 @@
 			files = (
 				7017ED9425EE6D2500CC9B33 /* BanubaEffectPlayer.xcframework in Frameworks */,
 				F80C47E672C078322821BF2C /* Pods_videocall_ios_swift.framework in Frameworks */,
-				1343724C26383F9C00553CAD /* BanubaSdk.framework in Frameworks */,
+				BAC5BBDA2702027D007D4B62 /* BanubaSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1343724426383F4E00553CAD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1343724826383F4E00553CAD /* BanubaSdk.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		41FD301D749EE53C618ADA71 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +120,19 @@
 		A54391BAE8727CEC05A68108 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1343724326383F4E00553CAD /* BanubaSdk.xcodeproj */,
+				BAC5BBD427020269007D4B62 /* BanubaSdk.xcodeproj */,
 				13522BE525B5C2AE00617023 /* BanubaEffectPlayer.xcframework */,
 				64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAC5BBD527020269007D4B62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAC5BBD927020269007D4B62 /* BanubaSdk.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +186,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1343724426383F4E00553CAD /* Products */;
-					ProjectRef = 1343724326383F4E00553CAD /* BanubaSdk.xcodeproj */;
+					ProductGroup = BAC5BBD527020269007D4B62 /* Products */;
+					ProjectRef = BAC5BBD427020269007D4B62 /* BanubaSdk.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -198,11 +198,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1343724826383F4E00553CAD /* BanubaSdk.framework */ = {
+		BAC5BBD927020269007D4B62 /* BanubaSdk.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = BanubaSdk.framework;
-			remoteRef = 1343724726383F4E00553CAD /* PBXContainerItemProxy */;
+			remoteRef = BAC5BBD827020269007D4B62 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
