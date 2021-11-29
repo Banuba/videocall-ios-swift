@@ -18,17 +18,16 @@ class ViewController: UIViewController {
         joinChannel()
         localVideo.layoutIfNeeded()
         sdkManager.setup(configuration: EffectPlayerConfiguration(renderMode: .video))
-        localVideo?.effectPlayer = sdkManager.effectPlayer
-        sdkManager.setRenderTarget(layer: localVideo?.layer as! CAEAGLLayer, playerConfiguration: nil)
+        sdkManager.setRenderTarget(view: localVideo, playerConfiguration: nil)
         sdkManager.output?.startForwardingFrames(handler: { (pixelBuffer) -> Void in
             self.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer)
         })
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        sdkManager.effectPlayer?.setEffectVolume(0)
+        sdkManager.effectManager()?.setEffectVolume(0)
         sdkManager.input.startCamera()
-        _ = sdkManager.loadEffect("UnluckyWitch")
+        _ = sdkManager.loadEffect("TrollGrandma")
         sdkManager.startEffectPlayer()
     }
     
@@ -38,7 +37,6 @@ class ViewController: UIViewController {
         videoFrame.format = 12
         videoFrame.time = CMTimeMakeWithSeconds(NSDate().timeIntervalSince1970, preferredTimescale: 1000)
         videoFrame.textureBuf = pixelBuffer
-        videoFrame.rotation = 180
         agoraKit.pushExternalVideoFrame(videoFrame)
     }
     
