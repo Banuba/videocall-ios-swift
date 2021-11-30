@@ -1,5 +1,8 @@
-The example shows how to get started using Banuba [Face AR SDK](https://docs.banuba.com/face-ar-sdk-v1/ios/ios_getting_started) and [Agora.io](https://www.agora.io/en/) SDK to enhance video calls with real-time face filters and virtual backgrounds.
-
+The example shows how to get started using Banuba [Face AR SDK](https://docs.banuba.com/face-ar-sdk-v1/ios/ios_getting_started) and [Agora.io](https://www.agora.io/en/) SDK to enhance video calls with real-time face filters and virtual backgrounds.  
+  
+**Important**  
+Please use [v0.x](../../tree/v0.x) branch for SDK version 0.x (e.g. v0.38).  
+  
 # Getting Started
 
 1. Get the latest Banuba SDK archive for iOS and the client token. Please fill in our [form on banuba.com](https://www.banuba.com/face-filters-sdk) website, or contact us via [info@banuba.com](mailto:info@banuba.com).
