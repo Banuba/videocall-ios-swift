@@ -1,5 +1,5 @@
 import UIKit
-import BanubaSdk
+import BNBSdkApi
 import AgoraRtcKit
 
 class ViewController: UIViewController {
