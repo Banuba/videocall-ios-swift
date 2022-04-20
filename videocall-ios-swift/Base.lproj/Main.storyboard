@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-iv-o7c" customClass="EffectPlayerView" customModule="BanubaSdk">
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-iv-o7c" customClass="EffectPlayerView" customModule="BNBSdkApi">
                                 <rect key="frame" x="269" y="49" width="140" height="186.5"/>
                                 <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
