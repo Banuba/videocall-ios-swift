@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         initializeAgoraEngine()
         setupVideo()
-        setupLocalVideo()
+        //setupLocalVideo()
         joinChannel()
         localVideo.layoutIfNeeded()
         sdkManager.setup(configuration: EffectPlayerConfiguration())
@@ -45,8 +45,24 @@ class ViewController: UIViewController {
     }
     
     private func setupVideo() {
-        agoraKit.setExternalVideoSource(true, useTexture: false, pushMode: true)
         agoraKit.enableVideo()
+        agoraKit.enableAudio()
+        agoraKit.setExternalVideoSource(true, useTexture: true, sourceType: .videoFrame)
+        
+        // set live broadcaster mode
+        agoraKit.setChannelProfile(.liveBroadcasting)
+        // set myself as broadcaster to stream video/audio
+        agoraKit.setClientRole(.broadcaster)
+
+        agoraKit.setVideoEncoderConfiguration(
+            AgoraVideoEncoderConfiguration(
+                size: AgoraVideoDimension1280x720,
+                frameRate: .fps30,
+                bitrate: AgoraVideoBitrateStandard,
+                orientationMode: .adaptative,
+                mirrorMode: .enabled
+            )
+        )
     }
     
     private func setupLocalVideo() {
@@ -58,16 +74,23 @@ class ViewController: UIViewController {
     }
     
     private func joinChannel() {
+        
+        let option = AgoraRtcChannelMediaOptions()
+        option.publishCustomAudioTrack = false
+        option.publishCustomVideoTrack = true
+        
+        
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
-        agoraKit.joinChannel(byToken: agoraClientToken, channelId: agoraChannelId, info: nil, uid: 0)
+        agoraKit.joinChannel(byToken: agoraClientToken, channelId: agoraChannelId, uid: 0, mediaOptions: option)
         UIApplication.shared.isIdleTimerDisabled = true
     }
 }
 
-extension ViewController: AgoraRtcEngineDelegate {
-    func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
+extension ViewController: AgoraRtcEngineDelegate {    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
+        // the view to be binded
         videoCanvas.view = remoteVideo
         videoCanvas.renderMode = .hidden
         agoraKit.setupRemoteVideo(videoCanvas)
