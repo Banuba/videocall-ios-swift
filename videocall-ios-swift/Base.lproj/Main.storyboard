@@ -21,12 +21,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-iv-o7c" customClass="EffectPlayerView" customModule="BNBSdkApi">
-                                <rect key="frame" x="269" y="53" width="140" height="186.5"/>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-iv-o7c" customClass="EffectPlayerView" customModule="BNBSdkApi">
+                                <rect key="frame" x="289" y="53" width="120" height="213.5"/>
                                 <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="XPG-og-dO1"/>
-                                    <constraint firstAttribute="width" secondItem="aSy-iv-o7c" secondAttribute="height" multiplier="3:4" id="zz1-GP-rCM"/>
+                                    <constraint firstAttribute="width" constant="120" id="XPG-og-dO1"/>
+                                    <constraint firstAttribute="width" secondItem="aSy-iv-o7c" secondAttribute="height" multiplier="9:16" id="zz1-GP-rCM"/>
                                 </constraints>
                             </view>
                         </subviews>
