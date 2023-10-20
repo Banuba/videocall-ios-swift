@@ -8,7 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var localVideo: EffectPlayerView!
     
     private var agoraKit: AgoraRtcEngineKit!
-    private var sdkManager = BanubaSdkManager()
+    private var player: Player!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,18 +17,25 @@ class ViewController: UIViewController {
         //setupLocalVideo()
         joinChannel()
         localVideo.layoutIfNeeded()
-        sdkManager.setup(configuration: EffectPlayerConfiguration())
-        sdkManager.setRenderTarget(view: localVideo, playerConfiguration: nil)
-        sdkManager.output?.startForwardingFrames(handler: { (pixelBuffer) -> Void in
-            self.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer)
+
+        player = Player()
+
+        let outputPixelBuffer = PixelBuffer(onPresent: { (pixelBuffer) -> Void in
+            self.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer!)
         })
+
+        let cameraDevice = CameraDevice(
+            cameraMode: .FrontCameraSession,
+            captureSessionPreset: .hd1280x720
+        )
+        cameraDevice.start()
+
+        player.use(input: Camera(cameraDevice: cameraDevice), outputs: [localVideo, outputPixelBuffer])
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        sdkManager.effectManager()?.setEffectVolume(0)
-        sdkManager.input.startCamera()
-        _ = sdkManager.loadEffect("TrollGrandma")
-        sdkManager.startEffectPlayer()
+        player.effectPlayer.effectManager()?.setEffectVolume(0)
+        _ = player.load(effect: "TrollGrandma")
     }
     
     private func pushPixelBufferIntoAgoraKit(pixelBuffer: CVPixelBuffer) {
