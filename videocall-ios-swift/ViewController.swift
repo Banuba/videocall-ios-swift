@@ -12,35 +12,53 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeAgoraEngine()
-        setupVideo()
-        //setupLocalVideo()
-        joinChannel()
         localVideo.layoutIfNeeded()
-
+        
+        // Initialize Agora engine
+        initializeAgoraEngine()
+        
+        // Setup Agora video/audio streams and enable external video source
+        setupVideo()
+        
+        // Configure video/audio and join to the Agora channel
+        joinChannel()
+        
+        // Create the effect `Player`
         player = Player()
-
-        let outputPixelBuffer = PixelBuffer(onPresent: { (pixelBuffer) -> Void in
-            self.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer!)
+        
+        // Create a PixelBuffer output, where `Player` will present frames
+        let outputPixelBuffer = PixelBuffer(onPresent: { [weak self] (pixelBuffer) -> Void in
+            // Push CVPixelBuffer into the Agora engine
+            self?.pushPixelBufferIntoAgoraKit(pixelBuffer: pixelBuffer!)
         })
-
+        
+        // Create a camera device in front facing mode and HD resolution
         let cameraDevice = CameraDevice(
             cameraMode: .FrontCameraSession,
             captureSessionPreset: .hd1280x720
         )
+        
+        // Use `CameraDevice` as an `Player` input
+        player.use(input: Camera(cameraDevice: cameraDevice))
+        
+        // Use `View` and `PixelBuffer` as an `Player` outputs
+        player.use(outputs: [localVideo, outputPixelBuffer])
+        
+        // Start camera frames forwarding
         cameraDevice.start()
-
-        player.use(input: Camera(cameraDevice: cameraDevice), outputs: [localVideo, outputPixelBuffer])
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        player.effectPlayer.effectManager()?.setEffectVolume(0)
+        // Disable effect sounds to avoid conflicts with microphone.
+        player.volume = 0.0
+        
+        // Load effect from the `effects` folder
         _ = player.load(effect: "TrollGrandma")
     }
     
     private func pushPixelBufferIntoAgoraKit(pixelBuffer: CVPixelBuffer) {
         let videoFrame = AgoraVideoFrame()
-        //Video format = 12 means iOS texture (CVPixelBufferRef)
+        // Video format = 12 means iOS texture (CVPixelBufferRef)
         videoFrame.format = 12
         videoFrame.time = CMTimeMakeWithSeconds(NSDate().timeIntervalSince1970, preferredTimescale: 1000)
         videoFrame.textureBuf = pixelBuffer
@@ -54,11 +72,11 @@ class ViewController: UIViewController {
     private func setupVideo() {
         agoraKit.enableVideo()
         agoraKit.enableAudio()
+        
+        // Enable external video source
         agoraKit.setExternalVideoSource(true, useTexture: true, sourceType: .videoFrame)
         
-        // set live broadcaster mode
         agoraKit.setChannelProfile(.liveBroadcasting)
-        // set myself as broadcaster to stream video/audio
         agoraKit.setClientRole(.broadcaster)
 
         agoraKit.setVideoEncoderConfiguration(
@@ -72,20 +90,10 @@ class ViewController: UIViewController {
         )
     }
     
-    private func setupLocalVideo() {
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 0
-        videoCanvas.view = localVideo
-        videoCanvas.renderMode = .hidden
-        agoraKit.setupLocalVideo(videoCanvas)
-    }
-    
     private func joinChannel() {
-        
         let option = AgoraRtcChannelMediaOptions()
         option.publishCustomAudioTrack = false
         option.publishCustomVideoTrack = true
-        
         
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
         agoraKit.joinChannel(byToken: agoraClientToken, channelId: agoraChannelId, uid: 0, mediaOptions: option)
@@ -97,7 +105,6 @@ extension ViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
-        // the view to be binded
         videoCanvas.view = remoteVideo
         videoCanvas.renderMode = .hidden
         agoraKit.setupRemoteVideo(videoCanvas)
