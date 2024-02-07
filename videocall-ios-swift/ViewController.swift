@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         // Create the effect `Player`
         player = Player()
         
+        // Disable effect sounds to avoid conflicts with microphone.
+        player.volume = 0.0
+        
         // Create a PixelBuffer output, where `Player` will present frames
         let outputPixelBuffer = PixelBuffer(onPresent: { [weak self] (pixelBuffer) -> Void in
             // Push CVPixelBuffer into the Agora engine
@@ -44,16 +47,11 @@ class ViewController: UIViewController {
         // Use `View` and `PixelBuffer` as an `Player` outputs
         player.use(outputs: [localVideo, outputPixelBuffer])
         
+        // Load the effect from the `effects` folder
+        _ = player.load(effect: "TrollGrandma")
+        
         // Start camera frames forwarding
         cameraDevice.start()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // Disable effect sounds to avoid conflicts with microphone.
-        player.volume = 0.0
-        
-        // Load effect from the `effects` folder
-        _ = player.load(effect: "TrollGrandma")
     }
     
     private func pushPixelBufferIntoAgoraKit(pixelBuffer: CVPixelBuffer) {
