@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BanubaSdkManager.initialize(
             resourcePath: [Bundle.main.bundlePath + "/bnb-resources",
                            Bundle.main.bundlePath + "/effects"],
-            clientTokenString: banubaClientToken
+            clientTokenString: banubaClientToken,
+            logLevel: .warning
         )
 
         return true

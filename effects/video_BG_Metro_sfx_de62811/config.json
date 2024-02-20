@@ -1,0 +1,656 @@
+{
+    "assets": {
+        "attachments": {
+            "ComposerRT_color": {
+                "type": "color"
+            },
+            "EffectRT0_color": {
+                "type": "color"
+            },
+            "EffectRT0_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            },
+            "EffectRT1_color": {
+                "type": "color"
+            },
+            "EffectRT1_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            },
+            "finalColorFilterRT_color": {
+                "type": "color"
+            },
+            "tex_bg": {
+                "clear": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "format": "rgba8",
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "color"
+            },
+            "tex_bg_depth": {
+                "clear": [
+                    1
+                ],
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "depth"
+            }
+        },
+        "faces": {
+            "face0": {
+                "index": 0,
+                "mesh": "!glfx_FACE"
+            }
+        },
+        "images": {
+            "BG_city.png": {
+                "file_name": "images/BG_city.png",
+                "type": "texture"
+            },
+            "BG_forest.png": {
+                "file_name": "images/BG_forest.png",
+                "type": "texture"
+            },
+            "BG_forest_fast.png": {
+                "file_name": "images/BG_forest_fast.png",
+                "type": "texture"
+            },
+            "BG_forest_mid.png": {
+                "file_name": "images/BG_forest_mid.png",
+                "type": "texture"
+            },
+            "BG_forest_slow.png": {
+                "file_name": "images/BG_forest_slow.png",
+                "type": "texture"
+            },
+            "BG_tree.png": {
+                "file_name": "images/BG_tree.png",
+                "type": "texture"
+            },
+            "Metro.png": {
+                "file_name": "images/Metro.png",
+                "type": "texture"
+            },
+            "background": {
+                "active": true,
+                "recognizer_feature_name": "background",
+                "type": "segmentation_mask"
+            },
+            "camera_image": {
+                "algorithm": "camera_composer",
+                "type": "procedural_texture"
+            },
+            "lut_normal.png": {
+                "file_name": "images/lut_normal.png",
+                "type": "texture"
+            },
+            "lut_user.png": {
+                "file_name": "images/lut_user.png",
+                "type": "texture"
+            },
+            "null_image.png": {
+                "file_name": "images/null_image.png",
+                "type": "texture"
+            },
+            "null_lut.png": {
+                "file_name": "images/null_lut.png",
+                "type": "texture"
+            },
+            "preview.png": {
+                "file_name": "images/preview.png",
+                "type": "texture"
+            }
+        },
+        "materials": {
+            "$builtin$materials/copy_pixels.-1": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "camera_image",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.0": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.1": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "EffectRT0_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/TriMFG": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "EffectRT0_color",
+                        "name": "glfx_BACKGROUND"
+                    },
+                    {
+                        "image": "frx",
+                        "name": "glfx_VIDEO"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/TriMat": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "background",
+                        "name": "glfx_BG_MASK"
+                    },
+                    {
+                        "image": "tex_bg",
+                        "name": "tex_bg"
+                    },
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/Tri6FG": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "lut_user.png",
+                        "name": "lut"
+                    },
+                    {
+                        "image": "background",
+                        "name": "glfx_BG_MASK"
+                    },
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/finalColorFilter.fsh": {
+                "samplers": [
+                    {
+                        "image": "EffectRT1_color",
+                        "name": "s_src"
+                    },
+                    {
+                        "image": "lut_normal.png",
+                        "name": "lookupTexture"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_city": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "BG_city.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_forest_slow": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "BG_forest_slow.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_forest_mid": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "BG_forest_mid.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_forest_fast": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "BG_forest_fast.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_tree": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "BG_tree.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_metro": {
+                "path": "shaders/tex_bg",
+                "samplers": [
+                    {
+                        "image": "Metro.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            }
+        },
+        "media": {
+            "frx": {
+                "file_name": "videos/foreground_metro.mp4",
+                "looped": false,
+                "play": false,
+                "type": "video"
+            },
+            "bg_metro":{
+                "file_name": "audio/bg_metro.ogg",
+                "looped": true,
+                "play": false,
+                "type": "audio"
+            }
+        },
+        "meshes": {
+            "!glfx_FACE": "$builtin$meshes/face.stream:0",
+            "camera_surface": "$builtin$meshes/fs_tri",
+            "metro.bsm2": "meshes/metro.bsm2",
+            "tri.bsm2": "meshes/tri.bsm2",
+            "triFG.bsm2": "meshes/triFG.bsm2",
+            "tri6FG.bsm2": "meshes/tri6FG.bsm2"
+        },
+        "morphs": {}
+    },
+    "components": {
+        "!glfx_UPDATE_BG0": {
+            "materials": [
+                "$builtin$materials/copy_pixels.1"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "ComposerRT_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.0"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "composer_camera_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.-1"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "face_tracker:0": {
+            "face": "face0",
+            "type": "face_tracker"
+        },
+        "finalColorFilter": {
+            "materials": [
+                "shaders/finalColorFilter.fsh"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "metro.bsm2": {
+            "materials": [
+                "shaders/mat_metro",
+                "shaders/mat_city",
+                "shaders/mat_forest_slow",
+                "shaders/mat_forest_mid",
+                "shaders/mat_forest_fast",
+                "shaders/mat_tree"
+            ],
+            "mesh": "metro.bsm2",
+            "type": "mesh_instance"
+        }
+    },
+    "entities": {
+        "!glfx_UPDATE_BG0": {
+            "components": [
+                "!glfx_UPDATE_BG0"
+            ],
+            "layer": "!glfx_UPDATE_BG0"
+        },
+        "ComposerRT_copy_append_to_root__": {
+            "components": [
+                "ComposerRT_copy"
+            ],
+            "layer": "ComposerRT_copy"
+        },
+        "append_to_root__metro.bsm2": {
+            "components": [
+                "metro.bsm2"
+            ],
+            "layers": [
+                "metro",
+                "city",
+                "forest_slow",
+                "forest_mid",
+                "forest_fast",
+                "tree"
+            ]
+        },
+        "composer_camera_copy": {
+            "components": [
+                "composer_camera_copy"
+            ],
+            "layer": "camera_copy"
+        },
+        "face_tracker0": {
+            "components": [
+                "face_tracker:0"
+            ]
+        },
+        "finalColorFilter_append_to_root__": {
+            "components": "finalColorFilter",
+            "layer": "finalColorFilter"
+        },
+        "spawn_entity0": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMFG"
+            ]
+        },
+        "spawn_entity1": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMFG"
+            ]
+        },
+        "spawn_entity2": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMFG"
+            ]
+        },
+        "spawn_entity3": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMFG"
+            ]
+        },
+        "spawn_entity4": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "Tri6FG"
+            ]
+        }
+    },
+    "global_params": [
+        "js_bg_mode"
+    ],
+    "hierarchy": {
+        "face_tracker0": [
+            
+        ],
+        "root": [
+            "face_tracker0",
+            "spawn_entity0",
+            "spawn_entity1",
+            "spawn_entity2",
+            "spawn_entity3",
+            "spawn_entity4",
+            "composer_camera_copy",
+            "append_to_root__metro.bsm2",
+            "ComposerRT_copy_append_to_root__",
+            "!glfx_UPDATE_BG0",
+            "finalColorFilter_append_to_root__"
+        ]
+    },
+    "layers": {
+        "!glfx_UPDATE_BG0": {},
+        "ComposerRT_copy": {},
+        "TriMFG": {},
+        "Tri6FG": {},
+        "TriMat": {},
+        "camera_copy": {},
+        "composer_pre": {},
+        "finalColorFilter": {},
+        "internal_face_morph__": {},
+        "metro": {},
+        "city": {},
+        "forest_slow": {},
+        "forest_mid": {},
+        "forest_fast": {},
+        "tree": {}
+    },
+    "main_camera": {},
+    "render_list": {
+        "default": [
+            {
+                "layer": "camera_copy",
+                "render_target": "ComposerRT"
+            },
+            {
+                "layer": "city",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_city" ]
+            },
+            {
+                "layer": "forest_slow",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_forest_slow" ]
+            },
+            {
+                "layer": "forest_mid",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_forest_mid" ]
+            },
+            {
+                "layer": "forest_fast",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_mat_forest_fast" ]
+            },
+            {
+                "layer": "tree",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_tree" ]
+            },
+            {
+                "layer": "metro",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [ "mat_metro" ]
+            },
+            {
+                "layer": "ComposerRT_copy",
+                "render_target": "EffectRT0"
+            },
+            {
+                "layer": "TriMat",
+                "render_target": "EffectRT0",
+                "sub_geometries": [
+                    "TriMat"
+                ]
+            },
+            {
+                "layer": "Tri6FG",
+                "render_target": "EffectRT0",
+                "sub_geometries": [
+                    "Tri6FG"
+                ]
+            },
+            {
+                "layer": "!glfx_UPDATE_BG0",
+                "render_target": "EffectRT1"
+            },
+            {
+                "layer": "TriMFG",
+                "render_target": "EffectRT1",
+                "sub_geometries": [
+                    "TriMFG"
+                ]
+            },
+            {
+                "layer": "internal_face_morph__",
+                "render_target": "EffectRT1"
+            },
+            {
+                "layer": "finalColorFilter",
+                "render_target": "finalColorFilterRT"
+            }
+        ]
+    },
+    "render_targets": {
+        "ComposerRT": [
+            "ComposerRT_color"
+        ],
+        "EffectRT0": [
+            "EffectRT0_color",
+            "EffectRT0_depth"
+        ],
+        "EffectRT1": [
+            "EffectRT1_color",
+            "EffectRT1_depth"
+        ],
+        "finalColorFilterRT": [
+            "finalColorFilterRT_color"
+        ],
+        "tex_bg_RT": {
+            "attachments": [
+                "tex_bg"
+            ],
+            "height": 1248,
+            "scale": 1,
+            "width": 2048
+        }
+    },
+    "scene": "BG_Metro",
+    "script": {
+        "entry_point": "config.js",
+        "type": "legacy"
+    },
+    "support360": false,
+    "type": "background"
+}
