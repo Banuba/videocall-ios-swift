@@ -7,7 +7,7 @@ protocol MainScreenProtocol: AnyObject {
     var localVideoView: EffectPlayerView! { get }
     var remoteVideoView: UIView! { get }
     
-    func presentNoCameraAccessView()
+    func presentNoCameraAccessAlert()
     func setLoadingEffect(_ isLoading: Bool)
 }
 
@@ -47,10 +47,30 @@ class MainViewController: UIViewController, MainScreenProtocol, UICollectionView
     
     // MARK: - MainViewProtocol
     
-    func presentNoCameraAccessView() {
-        let noCameraViewController = NoCameraAccessViewController()
-        noCameraViewController.modalPresentationStyle = .currentContext
-        present(noCameraViewController, animated: true, completion: nil)
+    func presentNoCameraAccessAlert() {
+        let alert = UIAlertController(
+            title: "No access to camera",
+            message: "Allow access to \"Camera\" in Settings to continue",
+            preferredStyle: .alert
+        )
+        alert.addAction(
+            .init(
+                title: "Open Settings",
+                style: .default,
+                handler: { _ in
+                    if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            )
+        )
+        alert.addAction(
+            .init(
+                title: "Back",
+                style: .cancel
+            )
+        )
+        present(alert, animated: true)
     }
     
     func setLoadingEffect(_ isLoading: Bool) {

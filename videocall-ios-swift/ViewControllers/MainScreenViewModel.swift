@@ -125,7 +125,7 @@ final class MainScreenViewModel: NSObject, AgoraRtcEngineDelegate {
                 joinChannel()
             }
         default:
-            view.presentNoCameraAccessView()
+            view.presentNoCameraAccessAlert()
         }
     }
     
