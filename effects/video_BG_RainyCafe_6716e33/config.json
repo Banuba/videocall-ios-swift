@@ -1,0 +1,616 @@
+{
+    "assets": {
+        "attachments": {
+            "ComposerRT_color": {
+                "type": "color"
+            },
+            "EffectRT0_color": {
+                "type": "color"
+            },
+            "EffectRT0_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            },
+            "EffectRT1_color": {
+                "type": "color"
+            },
+            "EffectRT1_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            },
+            "EffectRT2_color": {
+                "type": "color"
+            },
+            "EffectRT2_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            },
+            "finalColorFilterRT_color": {
+                "type": "color"
+            },
+            "tex_bg": {
+                "clear": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "format": "rgba8",
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "color"
+            },
+            "tex_bg_depth": {
+                "clear": [
+                    1
+                ],
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "depth"
+            },
+            "tex_fgLight1": {
+                "clear": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "format": "rgba8",
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "color"
+            },
+            "tex_fgLight1_depth": {
+                "clear": [
+                    1
+                ],
+                "load_state": "clear",
+                "store_state": "save",
+                "type": "depth"
+            }
+        },
+        "faces": {
+            "face0": {
+                "index": 0,
+                "mesh": "!glfx_FACE"
+            }
+        },
+        "images": {
+            "background": {
+                "active": true,
+                "recognizer_feature_name": "background",
+                "type": "segmentation_mask"
+            },
+            "camera_image": {
+                "algorithm": "camera_composer",
+                "type": "procedural_texture"
+            },
+            "light.png": {
+                "file_name": "images/light.png",
+                "type": "texture"
+            },
+            "lut_env.png": {
+                "file_name": "images/lut_env.png",
+                "type": "texture"
+            },
+            "null_image.png": {
+                "file_name": "images/null_image.png",
+                "type": "texture"
+            },
+            "null_lut.png": {
+                "file_name": "images/null_lut.png",
+                "type": "texture"
+            },
+            "preview.png": {
+                "file_name": "images/preview.png",
+                "type": "texture"
+            }
+        },
+        "materials": {
+            "$builtin$materials/copy_pixels.-1": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "camera_image",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.0": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.1": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "EffectRT0_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.2": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "EffectRT1_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/TriMF1": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "background",
+                        "name": "glfx_BG_MASK"
+                    },
+                    {
+                        "image": "tex_fgLight1",
+                        "name": "tex_fgLight1"
+                    },
+                    {
+                        "image": "EffectRT0_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/TriMa2": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "light.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "image": "background",
+                        "name": "glfx_BG_MASK"
+                    },
+                    {
+                        "image": "EffectRT1_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/TriMat": {
+                "built_in_samplers": [],
+                "samplers": [
+                    {
+                        "image": "background",
+                        "name": "glfx_BG_MASK"
+                    },
+                    {
+                        "image": "tex_bg",
+                        "name": "tex_bg"
+                    },
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": false
+                }
+            },
+            "shaders/finalColorFilter.fsh": {
+                "samplers": [
+                    {
+                        "image": "EffectRT2_color",
+                        "name": "s_src"
+                    },
+                    {
+                        "image": "lut_env.png",
+                        "name": "lookupTexture"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "mat_BG": {
+                "path":"shaders/tex_bg_0",
+                "built_in_samplers": [
+                    "bnb_BONES",
+                    "bnb_UVMORPH_FISHEYE",
+                    "bnb_MORPH"
+                ],
+                "samplers": [
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    },
+                    {
+                        "image": "frx",
+                        "name": "glfx_VIDEO"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    },
+                    {
+                        "name": "bnb_UVMORPH_FISHEYE"
+                    },
+                    {
+                        "name": "bnb_MORPH"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": true
+                }
+            },
+            "mat_particles": {
+                "path":"shaders/tex_fgLight1_0",
+                "built_in_samplers": [
+                    "bnb_BONES",
+                    "bnb_UVMORPH_FISHEYE",
+                    "bnb_MORPH"
+                ],
+                "samplers": [
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    },
+                    {
+                        "image": "frx",
+                        "name": "glfx_VIDEO"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    },
+                    {
+                        "name": "bnb_UVMORPH_FISHEYE"
+                    },
+                    {
+                        "name": "bnb_MORPH"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": true
+                }
+            }
+        },
+        "media": {
+            "frx": {
+                "file_name": "videos/BG_RainyCafe.mp4",
+                "looped": false,
+                "play": false,
+                "type": "video"
+            }
+        },
+        "meshes": {
+            "!glfx_FACE": "$builtin$meshes/face.stream:0",
+            "BG_RainyCafe.bsm2": "meshes/BG_RainyCafe.bsm2",
+            "camera_surface": "$builtin$meshes/fs_tri",
+            "tri.bsm2": "meshes/tri.bsm2",
+            "tri2.bsm2": "meshes/tri2.bsm2",
+            "triFG1.bsm2": "meshes/triFG1.bsm2"
+        },
+        "morphs": {}
+    },
+    "components": {
+        "!glfx_UPDATE_BG0": {
+            "materials": [
+                "$builtin$materials/copy_pixels.1"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "!glfx_UPDATE_BG1": {
+            "materials": [
+                "$builtin$materials/copy_pixels.2"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "ComposerRT_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.0"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "composer_camera_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.-1"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "face_tracker:0": {
+            "face": "face0",
+            "type": "face_tracker"
+        },
+        "finalColorFilter": {
+            "materials": [
+                "shaders/finalColorFilter.fsh"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "BG_RainyCafe": {
+            "materials": [
+                "mat_BG", "mat_particles"
+            ],
+            "mesh": "BG_RainyCafe.bsm2",
+            "type": "mesh_instance"
+        }
+    },
+    "entities": {
+        "!glfx_UPDATE_BG0": {
+            "components": [
+                "!glfx_UPDATE_BG0"
+            ],
+            "layer": "!glfx_UPDATE_BG0"
+        },
+        "!glfx_UPDATE_BG1": {
+            "components": [
+                "!glfx_UPDATE_BG1"
+            ],
+            "layer": "!glfx_UPDATE_BG1"
+        },
+        "ComposerRT_copy_append_to_root__": {
+            "components": [
+                "ComposerRT_copy"
+            ],
+            "layer": "ComposerRT_copy"
+        },
+        "BG_RainyCafe": {
+            "components": [
+                "BG_RainyCafe"
+            ],
+            "layers":[ "mat_BG", "mat_particles"]
+        },
+        "composer_camera_copy": {
+            "components": [
+                "composer_camera_copy"
+            ],
+            "layer": "camera_copy"
+        },
+        "face_tracker0": {
+            "components": [
+                "face_tracker:0"
+            ]
+        },
+        "finalColorFilter_append_to_root__": {
+            "components": "finalColorFilter",
+            "layer": "finalColorFilter"
+        },
+        "spawn_entity0": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMF1",
+                "TriMa2"
+            ]
+        },
+        "spawn_entity1": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMF1",
+                "TriMa2"
+            ]
+        },
+        "spawn_entity10": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "TriMat",
+                "TriMF1",
+                "TriMa2"
+            ]
+        }
+    },
+    "global_params": [
+        "randomVec",
+        "js_opacity",
+        "opacity"
+    ],
+    "hierarchy": {
+        "face_tracker0": [
+        
+        ],
+        "root": [
+            "face_tracker0",
+            "composer_camera_copy",
+            "BG_RainyCafe",
+            "spawn_entity0",
+            "spawn_entity1",
+            "spawn_entity10",
+            "ComposerRT_copy_append_to_root__",
+            "!glfx_UPDATE_BG0",
+            "!glfx_UPDATE_BG1",
+            "finalColorFilter_append_to_root__"
+        ]
+    },
+    "layers": {
+        "!glfx_UPDATE_BG0": {},
+        "!glfx_UPDATE_BG1": {},
+        "ComposerRT_copy": {},
+        "TriMF1": {},
+        "TriMa2": {},
+        "TriMat": {},
+        "camera_copy": {},
+        "composer_pre": {},
+        "finalColorFilter": {},
+        "internal_face_morph__": {},
+        "mat_BG": {},
+        "mat_particles": {}
+    },
+    "main_camera": {
+        "adjust_znear": 150
+    },
+    "render_list": {
+        "default": [
+            {
+                "layer": "camera_copy",
+                "render_target": "ComposerRT"
+            },
+            {
+                "layer": "mat_BG",
+                "render_target": "tex_bg_RT",
+                "sub_geometries": [
+                    "mat_BG"
+                ]
+            },
+            {
+                "layer": "mat_particles",
+                "render_target": "tex_fgLight1_RT",
+                "sub_geometries": [
+                    "mat_particles"
+                ]
+            },
+            {
+                "layer": "ComposerRT_copy",
+                "render_target": "EffectRT0"
+            },
+            {
+                "layer": "TriMat",
+                "render_target": "EffectRT0",
+                "sub_geometries": [
+                    "TriMat"
+                ]
+            },
+            {
+                "layer": "!glfx_UPDATE_BG0",
+                "render_target": "EffectRT1"
+            },
+            {
+                "layer": "TriMF1",
+                "render_target": "EffectRT1",
+                "sub_geometries": [
+                    "TriMF1"
+                ]
+            },
+            {
+                "layer": "!glfx_UPDATE_BG1",
+                "render_target": "EffectRT2"
+            },
+            {
+                "layer": "TriMa2",
+                "render_target": "EffectRT2",
+                "sub_geometries": [
+                    "TriMa2"
+                ]
+            },
+            {
+                "layer": "internal_face_morph__",
+                "render_target": "EffectRT2"
+            },
+            {
+                "layer": "finalColorFilter",
+                "render_target": "finalColorFilterRT"
+            }
+        ]
+    },
+    "render_targets": {
+        "ComposerRT": [
+            "ComposerRT_color"
+        ],
+        "EffectRT0": [
+            "EffectRT0_color",
+            "EffectRT0_depth"
+        ],
+        "EffectRT1": [
+            "EffectRT1_color",
+            "EffectRT1_depth"
+        ],
+        "EffectRT2": [
+            "EffectRT2_color",
+            "EffectRT2_depth"
+        ],
+        "finalColorFilterRT": [
+            "finalColorFilterRT_color"
+        ],
+        "tex_bg_RT": {
+            "attachments": [
+                "tex_bg"
+            ],
+            "height": 1080,
+            "scale": 1,
+            "width": 1920
+        },
+        "tex_fgLight1_RT": {
+            "attachments": [
+                "tex_fgLight1"
+            ],
+            "height": 1080,
+            "scale": 1,
+            "width": 1920
+        }
+    },
+    "scene": "BG_RainyCafe",
+    "script": {
+        "entry_point": "config.js",
+        "type": "legacy"
+    },
+    "support360": false,
+    "type": "background"
+}

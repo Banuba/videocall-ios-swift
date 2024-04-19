@@ -1,0 +1,409 @@
+{
+    "assets": {
+        "attachments": {
+            "ComposerRT_color": {
+                "type": "color"
+            },
+            "EffectRT0_color": {
+                "type": "color"
+            },
+            "EffectRT0_depth": {
+                "clear": [
+                    1.0
+                ],
+                "type": "depth"
+            }
+        },
+        "faces": {
+            "face0": {
+                "index": 0,
+                "mesh": "!glfx_FACE"
+            }
+        },
+        "images": {
+            "camera_image": {
+                "algorithm": "camera_composer",
+                "type": "procedural_texture"
+            },
+            "eyes_low.png": {
+                "file_name": "images/eyes_low.png",
+                "type": "texture"
+            },
+            "no_Normal.png": {
+                "file_name": "images/no_Normal.png",
+                "type": "texture"
+            },
+            "null_image.png": {
+                "file_name": "images/null_image.png",
+                "type": "texture"
+            },
+            "null_lut.png": {
+                "file_name": "images/null_lut.png",
+                "type": "texture"
+            },
+            "preview.png": {
+                "file_name": "images/preview.png",
+                "type": "texture"
+            },
+            "redmask_new_3.png": {
+                "file_name": "images/redmask_new_3.png",
+                "type": "texture"
+            }
+        },
+        "materials": {
+            "$builtin$materials/copy_pixels.-1": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "camera_image",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "$builtin$materials/copy_pixels.0": {
+                "parameters": {},
+                "samplers": [
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "tex_src"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": false,
+                    "zwrite": false
+                }
+            },
+            "shaders/mat_eyelash": {
+                "built_in_samplers": [
+                    "bnb_BONES",
+                    "bnb_MORPH"
+                ],
+                "samplers": [
+                    {
+                        "image": "null_image.png",
+                        "name": "tex_diffuse"
+                    },
+                    {
+                        "name": "bnb_BONES"
+                    },
+                    {
+                        "name": "bnb_MORPH"
+                    }
+                ],
+                "state": {
+                    "backfaces": true,
+                    "blend": "alpha",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": true
+                }
+            },
+            "shaders/retouch": {
+                "built_in_samplers": [],
+                "lagacy_onface_flag": true,
+                "samplers": [
+                    {
+                        "image": "redmask_new_3.png",
+                        "name": "selection_tex"
+                    },
+                    {
+                        "image": "eyes_low.png",
+                        "name": "lookupTexEyes"
+                    },
+                    {
+                        "image": "no_Normal.png",
+                        "name": "tex_normalMakeup"
+                    },
+                    {
+                        "image": "ComposerRT_color",
+                        "name": "glfx_BACKGROUND"
+                    }
+                ],
+                "state": {
+                    "backfaces": false,
+                    "blend": "off",
+                    "colorwrite": true,
+                    "ztest": true,
+                    "zwrite": true
+                }
+            }
+        },
+        "media": {
+            "frx": {
+                "type": "video"
+            }
+        },
+        "meshes": {
+            "!glfx_FACE": "$builtin$meshes/face.stream:0",
+            "camera_surface": "$builtin$meshes/fs_tri",
+            "eyelash.bsm2": "meshes/eyelash.bsm2"
+        },
+        "morphs": {}
+    },
+    "components": {
+        "ComposerRT_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.0"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "composer_camera_copy": {
+            "materials": [
+                "$builtin$materials/copy_pixels.-1"
+            ],
+            "mesh": "camera_surface",
+            "type": "mesh_instance"
+        },
+        "face_tracker:0": {
+            "face": "face0",
+            "type": "face_tracker"
+        }
+    },
+    "entities": {
+        "ComposerRT_copy_append_to_root__": {
+            "components": [
+                "ComposerRT_copy"
+            ],
+            "layer": "ComposerRT_copy"
+        },
+        "composer_camera_copy": {
+            "components": [
+                "composer_camera_copy"
+            ],
+            "layer": "camera_copy"
+        },
+        "face_tracker0": {
+            "components": [
+                "face_tracker:0"
+            ]
+        },
+        "spawn_entity0": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity1": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity10": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity11": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity12": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity13": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity14": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity15": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity16": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity17": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity18": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity19": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity2": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity3": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity4": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity5": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity6": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity7": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity8": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        },
+        "spawn_entity9": {
+            "add_to_legacy_entities_list": true,
+            "layers": [
+                "retouch",
+                "mat_eyelash"
+            ]
+        }
+    },
+    "hierarchy": {
+        "face_tracker0": [
+            "spawn_entity0",
+            "spawn_entity1",
+            "spawn_entity2",
+            "spawn_entity3",
+            "spawn_entity4",
+            "spawn_entity5",
+            "spawn_entity6",
+            "spawn_entity7",
+            "spawn_entity8",
+            "spawn_entity9",
+            "spawn_entity10",
+            "spawn_entity11",
+            "spawn_entity12",
+            "spawn_entity13",
+            "spawn_entity14",
+            "spawn_entity15",
+            "spawn_entity16",
+            "spawn_entity17",
+            "spawn_entity18",
+            "spawn_entity19"
+        ],
+        "root": [
+            "face_tracker0",
+            "composer_camera_copy",
+            "ComposerRT_copy_append_to_root__"
+        ]
+    },
+    "layers": {
+        "ComposerRT_copy": {},
+        "camera_copy": {},
+        "composer_pre": {},
+        "internal_face_morph__": {},
+        "mat_eyelash": {},
+        "retouch": {}
+    },
+    "main_camera": {
+        "adjust_znear": 150
+    },
+    "render_list": {
+        "default": [
+            {
+                "layer": "camera_copy",
+                "render_target": "ComposerRT"
+            },
+            {
+                "layer": "ComposerRT_copy",
+                "render_target": "EffectRT0"
+            },
+            {
+                "layer": "retouch",
+                "render_target": "EffectRT0",
+                "sub_geometries": [
+                    "retouch"
+                ]
+            },
+            {
+                "layer": "internal_face_morph__",
+                "render_target": "EffectRT0"
+            }
+        ]
+    },
+    "render_targets": {
+        "ComposerRT": [
+            "ComposerRT_color"
+        ],
+        "EffectRT0": [
+            "EffectRT0_color",
+            "EffectRT0_depth"
+        ]
+    },
+    "scene": "dialect",
+    "script": {
+        "entry_point": "config.js",
+        "type": "legacy"
+    }
+}

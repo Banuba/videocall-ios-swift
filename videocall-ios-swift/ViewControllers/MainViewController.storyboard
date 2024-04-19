@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="videocall_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBp-80-4C5" userLabel="Remote Video">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e5e-sG-l5L" userLabel="Effects Collection View">
+                                <rect key="frame" x="0.0" y="766" width="414" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="6Ql-xO-NCd"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="24" minimumInteritemSpacing="0.0" id="w5f-Am-DXK">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q4E-qe-e8O"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddN-2U-Vyb" userLabel="Local video" customClass="EffectPlayerView" customModule="BNBSdkApi">
+                                <rect key="frame" x="20" y="76" width="120" height="213.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="b3o-gb-fLL"/>
+                                    <constraint firstAttribute="width" secondItem="ddN-2U-Vyb" secondAttribute="height" multiplier="9:16" id="cS6-IT-IZE"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-kU-yCu">
+                                <rect key="frame" x="70" y="172.5" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vgm-Rs-6yt">
+                                <rect key="frame" x="358" y="68" width="44" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTQ-O8-IrF" userLabel="Switch Camera">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="FAP-ge-s4S"/>
+                                            <constraint firstAttribute="width" constant="44" id="wcN-Bx-dyI"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="camera_switch"/>
+                                        <connections>
+                                            <action selector="switchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHc-Fg-T4J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk8-uD-niR" userLabel="Mute">
+                                        <rect key="frame" x="0.0" y="52" width="44" height="44"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="mute"/>
+                                        <connections>
+                                            <action selector="muteEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lnU-nr-iyk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dk8-uD-niR" firstAttribute="height" secondItem="dTQ-O8-IrF" secondAttribute="height" id="Rpz-py-l8R"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ddN-2U-Vyb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="6Bh-SA-7f8"/>
+                            <constraint firstItem="0JV-kU-yCu" firstAttribute="centerX" secondItem="ddN-2U-Vyb" secondAttribute="centerX" id="6Qc-rh-OLX"/>
+                            <constraint firstItem="oBp-80-4C5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bsh-ge-AHu"/>
+                            <constraint firstItem="ddN-2U-Vyb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CIX-by-LpR"/>
+                            <constraint firstItem="oBp-80-4C5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jfe-Dq-dPV"/>
+                            <constraint firstItem="vgm-Rs-6yt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Xh6-p5-uw7"/>
+                            <constraint firstAttribute="bottom" secondItem="oBp-80-4C5" secondAttribute="bottom" id="cxG-VH-ozy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vgm-Rs-6yt" secondAttribute="trailing" constant="12" id="hVY-6Y-FHT"/>
+                            <constraint firstItem="e5e-sG-l5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mZy-6y-mYB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e5e-sG-l5L" secondAttribute="bottom" constant="26" id="svH-dG-nQh"/>
+                            <constraint firstItem="0JV-kU-yCu" firstAttribute="centerY" secondItem="ddN-2U-Vyb" secondAttribute="centerY" id="t6U-b4-5OQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oBp-80-4C5" secondAttribute="trailing" id="uwh-ub-Dlt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e5e-sG-l5L" secondAttribute="trailing" id="zlm-bC-0N9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="0JV-kU-yCu" id="mU8-Bl-MxZ"/>
+                        <outlet property="effectsCollectionView" destination="e5e-sG-l5L" id="e28-nf-pYt"/>
+                        <outlet property="localVideoView" destination="ddN-2U-Vyb" id="gje-sJ-EXc"/>
+                        <outlet property="remoteVideoView" destination="oBp-80-4C5" id="fTj-mc-cGN"/>
+                        <outlet property="switchCameraButton" destination="dTQ-O8-IrF" id="cTf-ST-Ool"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291.304347826087" y="366.96428571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_switch" width="28" height="28"/>
+        <image name="mute" width="28" height="28"/>
+    </resources>
+</document>

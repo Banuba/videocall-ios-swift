@@ -3,15 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		13C2AF6224766AD0009641FC /* effects in Resources */ = {isa = PBXBuildFile; fileRef = 13C2AF6124766AD0009641FC /* effects */; };
+		635135712B7E0D8300D4781F /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6351356F2B7E0D8300D4781F /* MainViewController.storyboard */; };
+		635135722B7E0D8300D4781F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635135702B7E0D8300D4781F /* MainViewController.swift */; };
+		635135802B7E10B700D4781F /* EffectPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635135772B7E10B700D4781F /* EffectPreviewCell.swift */; };
+		635135832B7E10B700D4781F /* EffectPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6351357A2B7E10B700D4781F /* EffectPreviewCell.xib */; };
+		635135862B7E10B700D4781F /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6351357D2B7E10B700D4781F /* ReusableCell.swift */; };
+		6351358B2B7E115500D4781F /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6351358A2B7E115500D4781F /* UIColor+Utils.swift */; };
+		6351358D2B7E115C00D4781F /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6351358C2B7E115C00D4781F /* UICollectionView+Extension.swift */; };
+		635135942B7E13DD00D4781F /* EffectConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635135932B7E13DD00D4781F /* EffectConfig.swift */; };
+		6351359A2B7E169000D4781F /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635135992B7E169000D4781F /* MainScreenViewModel.swift */; };
+		6351359C2B7E174D00D4781F /* EffectsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6351359B2B7E174D00D4781F /* EffectsFactory.swift */; };
+		635135A22B7E385900D4781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635135A12B7E385900D4781F /* LaunchScreen.storyboard */; };
+		635135BB2B7E568800D4781F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635135BA2B7E568800D4781F /* Media.xcassets */; };
+		63F8AF712B835C050059A0BD /* Player+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8AF702B835C050059A0BD /* Player+Async.swift */; };
 		703585872472DEB400FF0789 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703585862472DEB400FF0789 /* TokenService.swift */; };
 		70A262C72472B2670036B942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262C62472B2670036B942 /* AppDelegate.swift */; };
-		70A262CB2472B2670036B942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A262CA2472B2670036B942 /* ViewController.swift */; };
-		70A262CE2472B2670036B942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A262CC2472B2670036B942 /* Main.storyboard */; };
 		F80C47E672C078322821BF2C /* Pods_videocall_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,13 +39,24 @@
 /* Begin PBXFileReference section */
 		13522BE525B5C2AE00617023 /* BanubaEffectPlayer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BanubaEffectPlayer.xcframework; path = Frameworks/BanubaEffectPlayer.xcframework; sourceTree = "<group>"; };
 		13C2AF6124766AD0009641FC /* effects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effects; sourceTree = "<group>"; };
+		6351356F2B7E0D8300D4781F /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		635135702B7E0D8300D4781F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		635135772B7E10B700D4781F /* EffectPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectPreviewCell.swift; sourceTree = "<group>"; };
+		6351357A2B7E10B700D4781F /* EffectPreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectPreviewCell.xib; sourceTree = "<group>"; };
+		6351357D2B7E10B700D4781F /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		6351358A2B7E115500D4781F /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		6351358C2B7E115C00D4781F /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		635135932B7E13DD00D4781F /* EffectConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectConfig.swift; sourceTree = "<group>"; };
+		635135992B7E169000D4781F /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		6351359B2B7E174D00D4781F /* EffectsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFactory.swift; sourceTree = "<group>"; };
+		635135A12B7E385900D4781F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		635135BA2B7E568800D4781F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		63F8AF702B835C050059A0BD /* Player+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Async.swift"; sourceTree = "<group>"; };
 		64A7953414E6117D4C1C8C5A /* Pods_videocall_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_videocall_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		703585862472DEB400FF0789 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		703AA2F62473BCCD002272D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		70A262C32472B2670036B942 /* videocall-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "videocall-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A262C62472B2670036B942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70A262CA2472B2670036B942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		70A262CD2472B2670036B942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70A262D42472B26B0036B942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A262DA2472B7680036B942 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-videocall-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +85,54 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		635135752B7E10B700D4781F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				635135772B7E10B700D4781F /* EffectPreviewCell.swift */,
+				6351357A2B7E10B700D4781F /* EffectPreviewCell.xib */,
+				6351357D2B7E10B700D4781F /* ReusableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		635135882B7E10C700D4781F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				635135992B7E169000D4781F /* MainScreenViewModel.swift */,
+				6351356F2B7E0D8300D4781F /* MainViewController.storyboard */,
+				635135702B7E0D8300D4781F /* MainViewController.swift */,
+				635135752B7E10B700D4781F /* Cells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		635135892B7E113600D4781F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6351358A2B7E115500D4781F /* UIColor+Utils.swift */,
+				6351358C2B7E115C00D4781F /* UICollectionView+Extension.swift */,
+				63F8AF702B835C050059A0BD /* Player+Async.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		635135922B7E12FE00D4781F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6351359B2B7E174D00D4781F /* EffectsFactory.swift */,
+				635135932B7E13DD00D4781F /* EffectConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		635135B92B7E566300D4781F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				635135BA2B7E568800D4781F /* Media.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		70A262BA2472B2670036B942 = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +157,13 @@
 		70A262C52472B2670036B942 /* videocall-ios-swift */ = {
 			isa = PBXGroup;
 			children = (
+				635135922B7E12FE00D4781F /* Models */,
+				635135892B7E113600D4781F /* Helpers */,
+				635135882B7E10C700D4781F /* ViewControllers */,
+				635135B92B7E566300D4781F /* Resources */,
 				70A262C62472B2670036B942 /* AppDelegate.swift */,
-				70A262CA2472B2670036B942 /* ViewController.swift */,
 				703585862472DEB400FF0789 /* TokenService.swift */,
-				70A262CC2472B2670036B942 /* Main.storyboard */,
+				635135A12B7E385900D4781F /* LaunchScreen.storyboard */,
 				70A262D42472B26B0036B942 /* Info.plist */,
 			);
 			path = "videocall-ios-swift";
@@ -126,7 +199,6 @@
 				70A262C02472B2670036B942 /* Frameworks */,
 				70A262C12472B2670036B942 /* Resources */,
 				11179BC6365620C73F8F0818 /* [CP] Embed Pods Frameworks */,
-				897F223B88AB05A8E9CB74B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,7 +225,7 @@
 				};
 			};
 			buildConfigurationList = 70A262BE2472B2670036B942 /* Build configuration list for PBXProject "videocall-ios-swift" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -191,7 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A262CE2472B2670036B942 /* Main.storyboard in Resources */,
+				635135A22B7E385900D4781F /* LaunchScreen.storyboard in Resources */,
+				635135832B7E10B700D4781F /* EffectPreviewCell.xib in Resources */,
+				635135BB2B7E568800D4781F /* Media.xcassets in Resources */,
+				635135712B7E0D8300D4781F /* MainViewController.storyboard in Resources */,
 				13C2AF6224766AD0009641FC /* effects in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,23 +289,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		897F223B88AB05A8E9CB74B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-videocall-ios-swift/Pods-videocall-ios-swift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6EF16BD4FC255A6E821BA8A /* [CP] Check Pods Manifest.lock */ = {
@@ -262,24 +320,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6351358B2B7E115500D4781F /* UIColor+Utils.swift in Sources */,
 				703585872472DEB400FF0789 /* TokenService.swift in Sources */,
-				70A262CB2472B2670036B942 /* ViewController.swift in Sources */,
+				635135802B7E10B700D4781F /* EffectPreviewCell.swift in Sources */,
+				635135942B7E13DD00D4781F /* EffectConfig.swift in Sources */,
+				6351359C2B7E174D00D4781F /* EffectsFactory.swift in Sources */,
+				63F8AF712B835C050059A0BD /* Player+Async.swift in Sources */,
 				70A262C72472B2670036B942 /* AppDelegate.swift in Sources */,
+				6351358D2B7E115C00D4781F /* UICollectionView+Extension.swift in Sources */,
+				6351359A2B7E169000D4781F /* MainScreenViewModel.swift in Sources */,
+				635135722B7E0D8300D4781F /* MainViewController.swift in Sources */,
+				635135862B7E10B700D4781F /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		70A262CC2472B2670036B942 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70A262CD2472B2670036B942 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		70A262D52472B26B0036B942 /* Debug */ = {
@@ -401,7 +456,7 @@
 			baseConfigurationReference = FD9BD8C7C1B2D2BDB5F84589 /* Pods-videocall-ios-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NEWUB88C7M;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -409,7 +464,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "videocall-ios-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +482,7 @@
 			baseConfigurationReference = 98682289998CBF72EB661E97 /* Pods-videocall-ios-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NEWUB88C7M;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -435,7 +490,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "videocall-ios-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
