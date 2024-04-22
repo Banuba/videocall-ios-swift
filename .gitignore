@@ -1,6 +1,0 @@
-## User settings
-xcuserdata/
-
-Pods/
-# Don't care about exact versions
-Podfile.lock
